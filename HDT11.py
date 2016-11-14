@@ -43,7 +43,7 @@ predecesor = path[0][Source][Destination]
 while branch:
 	print predecesor
 	predecesor_1 = predecesor
-	if Source = predecesor:
+	if Source == predecesor:
 		branch = 1
 	else:
 		predecesor = path[0][Source][Destination]
@@ -64,7 +64,7 @@ if correcciones == "Si":
 	Edge = raw_input(Edges)
 	Vertices = Edge.split(", ")
 	print ""
-	if Vertices[0] not int Grafo.Nodos():
+	if Vertices[0] not in Grafo.Nodos():
 		alerta = 1
 	while alerta:
 		print "La carretera no existe, indique origen y destino"
@@ -78,7 +78,7 @@ if correcciones == "Si":
 	while branch:
 		predecesor = newpath[0][Source][Destination]
 		predecesor_1 = predecesor
-		if Source = predecesor
+		if Source == predecesor:
 			branch =1
 		else:
 			predecesor = newpath[0][Source][Destination]
