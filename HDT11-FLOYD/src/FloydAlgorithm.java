@@ -1,28 +1,33 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Universidad del Valle de Guatemala
+ * Algoritmos y Estrucutras de Datos
+ * Ing. Douglas Barrios
+ * Fecha: 14 de noviembre del 2016
  */
 
 /**
- *
- * @author Christian
+ * Christian Morales - 15010
+ * José Luis Méndez - 15024
+ * Rodrigo Barrios - 15
+ * Juan a. García - 15
  */
+import java.util.*;
+
 public class FloydAlgorithm {
 
     private int[][] P;
     
-    public void floyd(int n, int[][] W, int[][] P, int[][] D){
+    public void floyd(int n, ArrayList<ArrayList<Integer>> W, ArrayList<ArrayList<Integer>> P, ArrayList<ArrayList<Integer>> D){
 	D = W;
 	for (int i = 0; i<n; i++)
 	 	for(int j = 0; j<n; j++)
-	 		P[i][j] = 0;
+	 		P.get(i).set(j, 0);
 	for (int k = 0; k < n; k++)
             for(int i = 0; i < n; i++)
 	 	for(int j = 0; j<n; j++){
-                    if (D[i][k] + D[k][j]< D[i][j]){
-                        D[i][j] = D[i][k] + D[k][j];
-	 		P[i][j] = k;
+                    if (D.get(i).get(k) + D.get(k).get(j)< D.get(i).get(j)){
+                        int temp = D.get(i).get(k) + D.get(k).get(j);
+	 		P.get(i).set(j, k);
                     }
 	 	}
 }
